@@ -3,25 +3,84 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700&display=swap');
 
 $font: 'Noto Sans JP', sans-serif;
+$sb-white: #f6f5ef;
+$sb-green: #1e3932;
+$nav-font: #666;
+
+.global-width {
+  max-width: 1100px;
+  height: auto;
+  margin: 0 auto;
+}
 
 * {
   box-sizing: border-box;
-}
-
-body {
-  margin: 0px;
+  margin: 0;
+  padding: 0;
   font-family: $font;
 }
 
-video {
-  width: 100%;
-  height: 90vh;
-  object-fit: fill;
+body {
+  overflow-x: hidden;
 }
 
 header {
+  background-color: $sb-white;
+  font-size: 0.8rem;
+  width: 100%;
+  height: 140px;
+
+  li,
+  a {
+    list-style: none;
+    text-decoration: none;
+    font-weight: 800;
+    color: $nav-font;
+  }
+
+  .nav-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 110px;
+
+    .user-nav {
+      display: flex;
+      justify-content: flex-end;
+      gap: 50px;
+    }
+
+    .menu-nav {
+      display: flex;
+      position: relative;
+      justify-content: center;
+      gap: 12%;
+      bottom: 30%;
+    }
+  }
+
+  .logo-container {
+    position: relative;
+    bottom: 65%;
+
+    img {
+      width: 85px;
+      height: auto;
+    }
+  }
 }
 
-.global-width {
-  max-width: 620px;
+section {
+  background-color: $sb-green;
+  font-size: 0.8rem;
+  width: 100%;
+  height: auto;
+
+  .video-container {
+    video {
+      width: 100%;
+      height: 90vh;
+      object-fit: fill;
+    }
+  }
 }
