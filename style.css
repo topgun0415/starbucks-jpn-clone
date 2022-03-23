@@ -33,50 +33,61 @@ header a {
   color: #666;
 }
 
-header .nav-container {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  height: 110px;
+header img {
+  position: relative;
+  width: 90px;
+  height: auto;
+  bottom: 45px;
+  left: 25px;
 }
 
-header .nav-container .user-nav {
+header .user-nav {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
-  gap: 50px;
+  gap: 20px;
 }
 
-header .nav-container .menu-nav {
+header .user-nav img {
+  width: 13px;
+  height: auto;
+  top: 0px;
+  left: -3px;
+}
+
+header .user-nav a:hover {
+  text-decoration: underline;
+}
+
+header .menu-nav {
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  position: relative;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  gap: 12%;
-  bottom: 30%;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  top: 25px;
+  left: 70px;
+  text-align: center;
 }
 
-header .logo-container {
-  position: relative;
-  bottom: 65%;
+header .menu-nav li {
+  width: 100px;
+  margin: 5px;
+  padding: 10px;
+  border-radius: 6px;
 }
 
-header .logo-container img {
-  width: 85px;
-  height: auto;
+header .menu-nav #nav-cg {
+  width: 130px;
+}
+
+header .menu-nav li:hover {
+  background-color: #1e3932;
 }
 
 section {
