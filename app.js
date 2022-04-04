@@ -3,11 +3,6 @@
 // Header
 const $menuNav = document.querySelector('.menu-nav');
 const $subMenu = document.querySelectorAll('.sub-menu-wrapper');
-const $cafe_wrapper = document.querySelector('.cafe-wrapper');
-const $cafe_goods_wrapper = document.querySelector('.coffee-goods-wrapper');
-const $company_wrapper = document.querySelector('.company-wrapper');
-const $service_wrapper = document.querySelector('.service-wrapper');
-const $store_wrapper = document.querySelector('.store-wrapper');
 
 let preSubMenu;
 
