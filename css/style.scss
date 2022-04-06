@@ -1,0 +1,474 @@
+/** @format */
+@charset 'utf-8';
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700&display=swap');
+@import './glide.core.scss';
+@import './glide.theme.scss';
+
+// Variables
+$font: 'Noto Sans JP', sans-serif;
+$sb-white: #f6f5ef;
+$sb-green: #1e3932;
+$font-green: #00592d;
+$nav-fontColor: #666;
+$menu-background-color: #2c2a29;
+
+.global-width {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.none {
+  display: none;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: $font;
+}
+
+// Header
+body {
+  width: 100%;
+  height: auto;
+  margin-top: 130px;
+  overflow-x: hidden;
+}
+
+header {
+  background-color: $sb-white;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: 999;
+  font-size: 0.8rem;
+  width: 100%;
+  height: auto;
+
+  .nav-container {
+    width: 100%;
+    height: 130px;
+    background-color: $sb-white;
+  }
+  li,
+  a {
+    list-style: none;
+    text-decoration: none;
+    font-weight: 800;
+    color: $nav-fontColor;
+  }
+
+  img {
+    position: relative;
+    width: 75px;
+    height: auto;
+    bottom: 15px;
+    left: 25px;
+  }
+
+  .user-nav {
+    margin-right: 3%;
+    display: flex;
+    justify-content: flex-end;
+    gap: 40px;
+
+    img {
+      width: 13px;
+      height: auto;
+      top: 0px;
+      left: -3px;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+  }
+
+  .menu-nav {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin-left: 60px;
+    gap: 45px;
+    top: 35px;
+
+    a {
+      padding-right: 25px;
+      padding-left: 25px;
+      padding-bottom: 30px;
+    }
+
+    a:hover {
+      color: #00592d;
+      border-bottom: #00592d 4px solid;
+    }
+  }
+
+  .mobile-navbar {
+    display: none;
+  }
+
+  .sub-menu-wrapper {
+    display: none;
+    position: absolute;
+    background-color: $menu-background-color;
+    width: 100%;
+    height: 220px;
+    z-index: 999;
+
+    li {
+      color: #999;
+      margin-top: 5px;
+    }
+
+    li a:hover {
+      text-decoration: underline;
+    }
+
+    .sub-menu-container {
+      position: relative;
+      display: flex;
+      width: 1100px;
+      height: auto;
+      left: 170px;
+      top: 0;
+      gap: 30px;
+      background-color: transparent;
+      z-index: 999;
+    }
+
+    .sub-menu {
+      padding-top: 10px;
+      padding-bottom: 10px;
+      color: white;
+      font-size: 20px;
+      font-weight: 700;
+      z-index: 999;
+    }
+  }
+}
+
+// Section
+.fixed-box-wrapper {
+  .fixed-box {
+    position: fixed;
+    z-index: 997;
+    width: 200px;
+    height: auto;
+    right: 40px;
+
+    .del-btn {
+      position: relative;
+      top: 20px;
+      left: 185px;
+      font-size: 15px;
+    }
+
+    .del-btn:hover {
+      cursor: pointer;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      border-radius: 5px;
+    }
+    img:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+.video-wrapper {
+  background-color: $sb-green;
+  .video-container {
+    position: relative;
+    height: 618.75px;
+
+    video {
+      width: 100%;
+      height: 100%;
+      object-fit: fill;
+    }
+  }
+}
+.preseason-drink-wrapper::before {
+  background: url('https://image.istarbucks.co.kr/upload/common/img/main/2022/2022_Spring_bean_left_bg_1.png');
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 500px;
+  height: 500px;
+}
+
+.preseason-drink-wrapper::after {
+  background: url('https://image.istarbucks.co.kr/upload/common/img/main/2022/2022_Spring_bean_right_bg_1.png');
+  content: '';
+  position: absolute;
+  right: 0;
+  width: 500px;
+  height: 500px;
+  top: 749px;
+}
+
+.preseason-drink-wrapper {
+  background: #f9e8ee
+    url('https://image.istarbucks.co.kr/upload/common/img/main/2022/2040_Spring_bean_bg_1.jpg');
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+
+  .pre-drink-container {
+    position: relative;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+      width: 250px;
+      height: 250px;
+    }
+
+    p {
+      font-size: 30px;
+      font-weight: 700;
+      animation: sakura 3s forwards;
+    }
+
+    @keyframes sakura {
+      100% {
+        color: rgb(240, 173, 199);
+      }
+
+      0% {
+        color: transparent;
+      }
+    }
+  }
+}
+
+.coffee-life-wrapper {
+  background: url('https://www.starbucks.co.jp/coffee/220316/images/kv_pc.jpg');
+  width: auto;
+  height: auto;
+  overflow: hidden;
+  transform: translate3d(0, 0, 0);
+
+  .wave-one {
+    width: 3000px;
+    height: 3200px;
+    position: absolute;
+    top: 80%;
+    left: -55%;
+    border-radius: 45%;
+    background: white;
+    animation: move 13s infinite linear;
+  }
+
+  @keyframes move {
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  .coffee-life-container {
+    height: 700px;
+
+    img {
+      position: relative;
+      width: 35%;
+      height: auto;
+      top: 40%;
+      margin-left: 50px;
+    }
+    h3 {
+      position: relative;
+      width: 60%;
+      text-align: left;
+      height: auto;
+      top: 43%;
+      margin-left: 50px;
+      color: white;
+      text-shadow: 1px 0px 1px rgb(168, 51, 85);
+    }
+  }
+}
+
+.thanks-wrapper {
+  width: auto;
+  height: 620px;
+  margin: 0 auto;
+  background-color: #1e3932;
+
+  .thanks-video-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    .thanks-typo-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      h2 {
+        text-align: center;
+        position: relative;
+        color: rgb(227, 225, 220);
+      }
+
+      p {
+        width: 61%;
+        font-size: 0.8rem;
+        color: rgb(227, 225, 220);
+        text-align: center;
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+.slide-wrapper {
+  width: auto;
+  height: 100%;
+  background-color: transparent;
+
+  .glide__slide img {
+    width: 100%;
+    height: 850px;
+  }
+}
+
+// BreakPoint Tablet
+@media (max-width: 1024px) {
+  header {
+    width: 100%;
+    height: 130px;
+  }
+
+  header .nav-container {
+    width: 100%;
+    height: 130px;
+
+    img {
+      width: 70px;
+      height: auto;
+      top: 20px;
+    }
+    .user-nav li {
+      display: none;
+    }
+    .menu-nav li {
+      display: none;
+    }
+
+    .mobile-navbar {
+      display: block;
+      position: relative;
+      bottom: 65px;
+
+      ul {
+        display: flex;
+        justify-content: flex-end;
+        position: relative;
+        align-items: center;
+        gap: 9%;
+        margin-right: 45px;
+      }
+
+      img {
+        width: 80%;
+      }
+    }
+  }
+
+  .fixed-box {
+    display: none;
+  }
+
+  .glide img {
+    width: 100vw;
+    height: auto;
+  }
+}
+
+// BreakPoint Mobile
+@media (max-width: 500px) {
+  header {
+    width: 100%;
+    height: 130px;
+  }
+
+  header .nav-container {
+    width: 100%;
+    height: 130px;
+
+    img {
+      width: 70px;
+      height: auto;
+      top: 20px;
+    }
+    .user-nav li {
+      display: none;
+    }
+    .menu-nav li {
+      display: none;
+    }
+
+    .mobile-navbar {
+      display: block;
+      position: relative;
+      bottom: 65px;
+
+      ul {
+        display: flex;
+        justify-content: flex-end;
+        position: relative;
+        align-items: center;
+        gap: 9%;
+        margin-right: 45px;
+      }
+
+      img {
+        width: 80%;
+      }
+    }
+  }
+
+  .fixed-box {
+    display: none;
+  }
+
+  .video-wrapper {
+    width: 100vh;
+    height: auto;
+  }
+  .preseason-drink-wrapper {
+    width: 100vh;
+    height: auto;
+  }
+  .coffee-life-wrapper {
+    width: 100vh;
+    height: auto;
+  }
+  .thanks-wrapper {
+    width: 100vh;
+    height: auto;
+  }
+
+  .glide li {
+    width: 100vw;
+    height: auto;
+  }
+
+  .slide-wrapper {
+    width: 100vh;
+  }
+}

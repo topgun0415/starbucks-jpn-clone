@@ -1,0 +1,694 @@
+/** @format */
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700&display=swap");
+/** @format */
+/** @format */
+.glide {
+  position: relative;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.glide * {
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+}
+
+.glide__track {
+  overflow: hidden;
+}
+
+.glide__slides {
+  position: relative;
+  width: 100%;
+  list-style: none;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -ms-touch-action: pan-Y;
+      touch-action: pan-Y;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  white-space: nowrap;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  will-change: transform;
+}
+
+.glide__slides--dragging {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.glide__slide {
+  width: 100%;
+  height: 100%;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  white-space: normal;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  -webkit-touch-callout: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.glide__slide a {
+  -webkit-user-select: none;
+          user-select: none;
+  -webkit-user-drag: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+.glide__arrows {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.glide__bullets {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.glide--rtl {
+  direction: rtl;
+}
+
+/** @format */
+/** @format */
+.glide__arrow {
+  position: absolute;
+  display: block;
+  top: 50%;
+  z-index: 2;
+  color: white;
+  text-transform: uppercase;
+  padding: 9px 12px;
+  background-color: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  border-radius: 4px;
+  -webkit-box-shadow: 0 0.25em 0.5em 0 rgba(0, 0, 0, 0.1);
+          box-shadow: 0 0.25em 0.5em 0 rgba(0, 0, 0, 0.1);
+  text-shadow: 0 0.25em 0.5em rgba(0, 0, 0, 0.1);
+  opacity: 1;
+  cursor: pointer;
+  -webkit-transition: opacity 150ms ease, border 300ms ease-in-out;
+  transition: opacity 150ms ease, border 300ms ease-in-out;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  line-height: 1;
+}
+
+.glide__arrow:focus {
+  outline: none;
+}
+
+.glide__arrow:hover {
+  border-color: white;
+}
+
+.glide__arrow--left {
+  left: 2em;
+}
+
+.glide__arrow--right {
+  right: 2em;
+}
+
+.glide__arrow--disabled {
+  opacity: 0.33;
+}
+
+.glide__bullets {
+  position: absolute;
+  z-index: 2;
+  bottom: 2em;
+  left: 50%;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  list-style: none;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+.glide__bullet {
+  background-color: rgba(255, 255, 255, 0.5);
+  width: 9px;
+  height: 9px;
+  padding: 0;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  -webkit-transition: all 300ms ease-in-out;
+  transition: all 300ms ease-in-out;
+  cursor: pointer;
+  line-height: 0;
+  -webkit-box-shadow: 0 0.25em 0.5em 0 rgba(0, 0, 0, 0.1);
+          box-shadow: 0 0.25em 0.5em 0 rgba(0, 0, 0, 0.1);
+  margin: 0 0.25em;
+}
+
+.glide__bullet:focus {
+  outline: none;
+}
+
+.glide__bullet:hover, .glide__bullet:focus {
+  border: 2px solid white;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.glide__bullet--active {
+  background-color: white;
+}
+
+.glide--swipeable {
+  cursor: grab;
+  cursor: -webkit-grab;
+}
+
+.glide--dragging {
+  cursor: grabbing;
+  cursor: -webkit-grabbing;
+}
+
+.global-width {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.none {
+  display: none;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Noto Sans JP", sans-serif;
+}
+
+body {
+  width: 100%;
+  height: auto;
+  margin-top: 130px;
+  overflow-x: hidden;
+}
+
+header {
+  background-color: #f6f5ef;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: 999;
+  font-size: 0.8rem;
+  width: 100%;
+  height: auto;
+}
+
+header .nav-container {
+  width: 100%;
+  height: 130px;
+  background-color: #f6f5ef;
+}
+
+header li,
+header a {
+  list-style: none;
+  text-decoration: none;
+  font-weight: 800;
+  color: #666;
+}
+
+header img {
+  position: relative;
+  width: 75px;
+  height: auto;
+  bottom: 15px;
+  left: 25px;
+}
+
+header .user-nav {
+  margin-right: 3%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  gap: 40px;
+}
+
+header .user-nav img {
+  width: 13px;
+  height: auto;
+  top: 0px;
+  left: -3px;
+}
+
+header .user-nav a:hover {
+  text-decoration: underline;
+}
+
+header .menu-nav {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+  margin-left: 60px;
+  gap: 45px;
+  top: 35px;
+}
+
+header .menu-nav a {
+  padding-right: 25px;
+  padding-left: 25px;
+  padding-bottom: 30px;
+}
+
+header .menu-nav a:hover {
+  color: #00592d;
+  border-bottom: #00592d 4px solid;
+}
+
+header .mobile-navbar {
+  display: none;
+}
+
+header .sub-menu-wrapper {
+  display: none;
+  position: absolute;
+  background-color: #2c2a29;
+  width: 100%;
+  height: 220px;
+  z-index: 999;
+}
+
+header .sub-menu-wrapper li {
+  color: #999;
+  margin-top: 5px;
+}
+
+header .sub-menu-wrapper li a:hover {
+  text-decoration: underline;
+}
+
+header .sub-menu-wrapper .sub-menu-container {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 1100px;
+  height: auto;
+  left: 170px;
+  top: 0;
+  gap: 30px;
+  background-color: transparent;
+  z-index: 999;
+}
+
+header .sub-menu-wrapper .sub-menu {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  color: white;
+  font-size: 20px;
+  font-weight: 700;
+  z-index: 999;
+}
+
+.fixed-box-wrapper .fixed-box {
+  position: fixed;
+  z-index: 997;
+  width: 200px;
+  height: auto;
+  right: 40px;
+}
+
+.fixed-box-wrapper .fixed-box .del-btn {
+  position: relative;
+  top: 20px;
+  left: 185px;
+  font-size: 15px;
+}
+
+.fixed-box-wrapper .fixed-box .del-btn:hover {
+  cursor: pointer;
+}
+
+.fixed-box-wrapper .fixed-box img {
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+}
+
+.fixed-box-wrapper .fixed-box img:hover {
+  cursor: pointer;
+}
+
+.video-wrapper {
+  background-color: #1e3932;
+}
+
+.video-wrapper .video-container {
+  position: relative;
+  height: 618.75px;
+}
+
+.video-wrapper .video-container video {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: fill;
+     object-fit: fill;
+}
+
+.preseason-drink-wrapper::before {
+  background: url("https://image.istarbucks.co.kr/upload/common/img/main/2022/2022_Spring_bean_left_bg_1.png");
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 500px;
+  height: 500px;
+}
+
+.preseason-drink-wrapper::after {
+  background: url("https://image.istarbucks.co.kr/upload/common/img/main/2022/2022_Spring_bean_right_bg_1.png");
+  content: '';
+  position: absolute;
+  right: 0;
+  width: 500px;
+  height: 500px;
+  top: 749px;
+}
+
+.preseason-drink-wrapper {
+  background: #f9e8ee url("https://image.istarbucks.co.kr/upload/common/img/main/2022/2040_Spring_bean_bg_1.jpg");
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+}
+
+.preseason-drink-wrapper .pre-drink-container {
+  position: relative;
+  height: 500px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.preseason-drink-wrapper .pre-drink-container img {
+  width: 250px;
+  height: 250px;
+}
+
+.preseason-drink-wrapper .pre-drink-container p {
+  font-size: 30px;
+  font-weight: 700;
+  -webkit-animation: sakura 3s forwards;
+          animation: sakura 3s forwards;
+}
+
+@-webkit-keyframes sakura {
+  100% {
+    color: #f0adc7;
+  }
+  0% {
+    color: transparent;
+  }
+}
+
+@keyframes sakura {
+  100% {
+    color: #f0adc7;
+  }
+  0% {
+    color: transparent;
+  }
+}
+
+.coffee-life-wrapper {
+  background: url("https://www.starbucks.co.jp/coffee/220316/images/kv_pc.jpg");
+  width: auto;
+  height: auto;
+  overflow: hidden;
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+}
+
+.coffee-life-wrapper .wave-one {
+  width: 3000px;
+  height: 3200px;
+  position: absolute;
+  top: 80%;
+  left: -55%;
+  border-radius: 45%;
+  background: white;
+  -webkit-animation: move 13s infinite linear;
+          animation: move 13s infinite linear;
+}
+
+@-webkit-keyframes move {
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes move {
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+.coffee-life-wrapper .coffee-life-container {
+  height: 700px;
+}
+
+.coffee-life-wrapper .coffee-life-container img {
+  position: relative;
+  width: 35%;
+  height: auto;
+  top: 40%;
+  margin-left: 50px;
+}
+
+.coffee-life-wrapper .coffee-life-container h3 {
+  position: relative;
+  width: 60%;
+  text-align: left;
+  height: auto;
+  top: 43%;
+  margin-left: 50px;
+  color: white;
+  text-shadow: 1px 0px 1px #a83355;
+}
+
+.thanks-wrapper {
+  width: auto;
+  height: 620px;
+  margin: 0 auto;
+  background-color: #1e3932;
+}
+
+.thanks-wrapper .thanks-video-container {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.thanks-wrapper .thanks-video-container .thanks-typo-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.thanks-wrapper .thanks-video-container .thanks-typo-container h2 {
+  text-align: center;
+  position: relative;
+  color: #e3e1dc;
+}
+
+.thanks-wrapper .thanks-video-container .thanks-typo-container p {
+  width: 61%;
+  font-size: 0.8rem;
+  color: #e3e1dc;
+  text-align: center;
+  font-weight: bold;
+}
+
+.slide-wrapper {
+  width: auto;
+  height: 100%;
+  background-color: transparent;
+}
+
+.slide-wrapper .glide__slide img {
+  width: 100%;
+  height: 850px;
+}
+
+@media (max-width: 1024px) {
+  header {
+    width: 100%;
+    height: 130px;
+  }
+  header .nav-container {
+    width: 100%;
+    height: 130px;
+  }
+  header .nav-container img {
+    width: 70px;
+    height: auto;
+    top: 20px;
+  }
+  header .nav-container .user-nav li {
+    display: none;
+  }
+  header .nav-container .menu-nav li {
+    display: none;
+  }
+  header .nav-container .mobile-navbar {
+    display: block;
+    position: relative;
+    bottom: 65px;
+  }
+  header .nav-container .mobile-navbar ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+    position: relative;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    gap: 9%;
+    margin-right: 45px;
+  }
+  header .nav-container .mobile-navbar img {
+    width: 80%;
+  }
+  .fixed-box {
+    display: none;
+  }
+  .glide img {
+    width: 100vw;
+    height: auto;
+  }
+}
+
+@media (max-width: 500px) {
+  header {
+    width: 100%;
+    height: 130px;
+  }
+  header .nav-container {
+    width: 100%;
+    height: 130px;
+  }
+  header .nav-container img {
+    width: 70px;
+    height: auto;
+    top: 20px;
+  }
+  header .nav-container .user-nav li {
+    display: none;
+  }
+  header .nav-container .menu-nav li {
+    display: none;
+  }
+  header .nav-container .mobile-navbar {
+    display: block;
+    position: relative;
+    bottom: 65px;
+  }
+  header .nav-container .mobile-navbar ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+    position: relative;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    gap: 9%;
+    margin-right: 45px;
+  }
+  header .nav-container .mobile-navbar img {
+    width: 80%;
+  }
+  .fixed-box {
+    display: none;
+  }
+  .video-wrapper {
+    width: 100vh;
+    height: auto;
+  }
+  .preseason-drink-wrapper {
+    width: 100vh;
+    height: auto;
+  }
+  .coffee-life-wrapper {
+    width: 100vh;
+    height: auto;
+  }
+  .thanks-wrapper {
+    width: 100vh;
+    height: auto;
+  }
+  .glide li {
+    width: 100vw;
+    height: auto;
+  }
+  .slide-wrapper {
+    width: 100vh;
+  }
+}
+/*# sourceMappingURL=style.css.map */
