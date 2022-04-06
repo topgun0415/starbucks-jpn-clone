@@ -7,7 +7,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="shortcut icon" href="img/favicon.ico" />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/node_modules/@glidejs/glide/src/assets/sass/glide.core">
     <title>スターバックス</title>
   </head>
   <body>
@@ -172,15 +173,66 @@
       </div>
     </section>
     <section class="thanks-wrapper">
-      <div class="thanks-video-cotainer">
-        <iframe src="https://www.youtube.com/embed/U0NRbR8h_DA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <div class="thanks-video-container">
+        <iframe width='650' height='450' src="https://www.youtube.com/embed/U0NRbR8h_DA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <div class="thanks-typo-container">
+          <h2>Thank you For choosing us</h2>
+          <br>
+          <p>
+            1杯のコーヒーを通して、皆様にぬくもりあるひとときをお届けできるよう、安全対策をより一層強化し、営業してまいります。
+          </p>
+          <br>
+          <p>
+            ご来店いただく際は、お客様とパートナーの安全確保のため、感染予防への引き続きのご協力をお願いいたします。
+          </p>
+        </div>
       </div>
-      
+    </section>
+    <section class="slide-wrapper">
+      <div class="glide">
+        <div class="glide__track" data-glide-el="track">
+          <ul class="glide__slides">
+            <li class="glide__slide card1"><img src="./img/card1.jpeg" alt=""></li>
+            <li class="glide__slide card2"><img src="./img/card2.jpeg" alt=""></li>
+            <li class="glide__slide card3"><img src="./img/card3.png" alt=""></li>
+            <li class="glide__slide card4"><img src="./img/card4.jpeg" alt=""></li>
+          </ul>
+        </div>
+        <div class="glide__arrows" data-glide-el="controls">
+          <button class="glide__arrow glide__arrow--left" data-glide-dir="<">prev</button>
+          <button class="glide__arrow glide__arrow--right" data-glide-dir=">">next</button>
+        </div>
+        <div class="glide__bullets" data-glide-el="controls[nav]">
+          <button class="glide__bullet" data-glide-dir="=0"></button>
+          <button class="glide__bullet" data-glide-dir="=1"></button>
+          <button class="glide__bullet" data-glide-dir="=2"></button>
+          <button class="glide__bullet" data-glide-dir="=3"></button>
+        </div>
+      </div>
     </section>
 
     <!-- footer -->
     <footer></footer>
-    <script src="app.js"></script>
+
+
+    <!-- Script -->
+    <script src="/js/app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
+    <script>
+      new Glide('.glide', {
+            type: 'slider',
+            startAt: 0,
+            perView: 1,
+            gap: 0, // px
+            bound: false, // true면 마지막 시간대에서 튕겨져 나가서 ux에 좋지 않음
+            focusAt: 'center',
+            dragThreshold: 120,
+            autoplay: 3000,
+            hoverpause: false,
+           
+          
+        }).mount();
+    </script>
     <script
       src="https://kit.fontawesome.com/50cce83fda.js"
       crossorigin="anonymous"
