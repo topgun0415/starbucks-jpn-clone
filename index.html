@@ -7,8 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="shortcut icon" href="img/favicon.ico" />
-    <link rel="stylesheet" href="/css/style.css" />
-    <link rel="stylesheet" href="/css/node_modules/@glidejs/glide/src/assets/sass/glide.core">
+    <link rel="stylesheet" href="./css/style.css" />
     <title>スターバックス</title>
   </head>
   <body>
@@ -192,8 +191,8 @@
       <div class="glide">
         <div class="glide__track" data-glide-el="track">
           <ul class="glide__slides">
-            <li class="glide__slide card1"><img src="./img/card1.jpeg" alt=""></li>
-            <li class="glide__slide card2"><img src="./img/card2.jpeg" alt=""></li>
+            <li class="glide__slide card1"><a href="https://www.starbucks.co.jp/cafe/gyunew/?nid=tbn_01_pc"><img src="./img/card1.jpeg" alt=""></a></li>
+            <li class="glide__slide card2"><a href="https://www.starbucks.co.jp/info/comingsoon/info.html?nid=wh_02_pc"><img src="./img/card2.jpeg" alt=""></a></li>
             <li class="glide__slide card3"><img src="./img/card3.png" alt=""></li>
             <li class="glide__slide card4"><img src="./img/card4.jpeg" alt=""></li>
           </ul>
@@ -212,25 +211,29 @@
     </section>
 
     <!-- footer -->
-    <footer></footer>
-
+    <footer class="footer-wrapper"> 
+      <div class="footer-sns-container">
+        <i class="fa-brands fa-facebook"></i>
+        <i class="fa-brands fa-twitter"></i>
+        <i class="fa-brands fa-instagram"></i>
+      </div>
+      <div class="footer-right-container">
+        <p>©2022 Starbucks Coffee Company. All Rights Reserved.</p>
+      </div>
+    </footer>
 
     <!-- Script -->
-    <script src="/js/app.js"></script>
+    <script src="./js/app.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
     <script>
       new Glide('.glide', {
             type: 'slider',
             startAt: 0,
             perView: 1,
-            gap: 0, // px
             bound: false, // true면 마지막 시간대에서 튕겨져 나가서 ux에 좋지 않음
             focusAt: 'center',
-            dragThreshold: 120,
             autoplay: 3000,
             hoverpause: false,
-           
-          
         }).mount();
     </script>
     <script
