@@ -253,7 +253,7 @@ header {
 }
 
 .coffee-life-wrapper {
-  background-image: url('/img/coffee-life.png');
+  background-image: url('https://github.com/topgun0415/starbucks-jpn-clone/blob/main/img/coffee-life.png?raw=true');
   background-size: 1500px;
   width: auto;
   height: auto;
@@ -268,7 +268,7 @@ header {
     left: -75%;
     border-radius: 25%;
     background: rgb(225, 252, 227);
-    animation: move 13s infinite linear;
+    animation: move 15s infinite linear;
   }
 
   @keyframes move {

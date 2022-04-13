@@ -452,7 +452,7 @@ header .sub-menu-wrapper .sub-menu {
 }
 
 .coffee-life-wrapper {
-  background-image: url("/img/coffee-life.png");
+  background-image: url("https://github.com/topgun0415/starbucks-jpn-clone/blob/main/img/coffee-life.png?raw=true");
   background-size: 1500px;
   width: auto;
   height: auto;
@@ -469,8 +469,8 @@ header .sub-menu-wrapper .sub-menu {
   left: -75%;
   border-radius: 25%;
   background: #e1fce3;
-  -webkit-animation: move 13s infinite linear;
-          animation: move 13s infinite linear;
+  -webkit-animation: move 15s infinite linear;
+          animation: move 15s infinite linear;
 }
 
 @-webkit-keyframes move {
