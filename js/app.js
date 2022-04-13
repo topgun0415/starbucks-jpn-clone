@@ -43,8 +43,6 @@ function clickDeleteHandler(e) {
   e.target.parentNode.style.display = 'none';
 }
 
-function clickScreenMover(e) {}
-
 // Header Event
 $menuNav.addEventListener('mouseover', mouseOverHandler);
 $subMenu[0].addEventListener('mouseleave', (e) => {
