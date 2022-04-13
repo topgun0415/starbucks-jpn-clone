@@ -452,7 +452,8 @@ header .sub-menu-wrapper .sub-menu {
 }
 
 .coffee-life-wrapper {
-  background: url("https://www.starbucks.co.jp/coffee/220316/images/kv_pc.jpg");
+  background-image: url("/img/coffee-life.png");
+  background-size: 1500px;
   width: auto;
   height: auto;
   overflow: hidden;
@@ -464,10 +465,10 @@ header .sub-menu-wrapper .sub-menu {
   width: 3000px;
   height: 3200px;
   position: absolute;
-  top: 80%;
-  left: -55%;
-  border-radius: 45%;
-  background: white;
+  top: 98%;
+  left: -75%;
+  border-radius: 25%;
+  background: #e1fce3;
   -webkit-animation: move 13s infinite linear;
           animation: move 13s infinite linear;
 }
@@ -494,7 +495,7 @@ header .sub-menu-wrapper .sub-menu {
   position: relative;
   width: 35%;
   height: auto;
-  top: 40%;
+  top: 25%;
   margin-left: 50px;
 }
 
@@ -503,10 +504,11 @@ header .sub-menu-wrapper .sub-menu {
   width: 60%;
   text-align: left;
   height: auto;
-  top: 43%;
+  top: 30%;
+  font-size: 1.8rem;
   margin-left: 50px;
-  color: white;
-  text-shadow: 1px 0px 1px #a83355;
+  color: #00592d;
+  text-shadow: 1px 0px 1px white;
 }
 
 .thanks-wrapper {
